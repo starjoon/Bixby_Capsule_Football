@@ -1,0 +1,3 @@
+integer (Score) {
+  description (team's score)
+}

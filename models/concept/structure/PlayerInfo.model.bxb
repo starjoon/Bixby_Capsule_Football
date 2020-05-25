@@ -1,0 +1,23 @@
+structure (PlayerInfo) {
+  description (player's info)
+  property (playerName) {
+    type (PlayerName)
+    min (Required) max (Many)
+  }
+  property (playerPic) {
+    type (PlayerPic)
+    min (Required) max (Many)
+  }
+  property (matchesPlayed) {
+    type (MatchesPlayed)
+    min (Required) max (Many)
+  }
+  property (goals) {
+    type (Goals)
+    min (Required) max (Many)
+  }
+  property (assists) {
+    type (Assists)
+    min (Required) max (Many)
+  }
+}

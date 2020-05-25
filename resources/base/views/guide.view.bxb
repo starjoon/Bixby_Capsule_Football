@@ -1,0 +1,122 @@
+result-view {
+  match {
+    Guide (result)
+  }
+  
+   message {
+    template-macro (CAPSULE-GUIDE)
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          paragraph {
+            value {
+              template ("본 캡슐은 현재 해외에서 활동 중인 한국 축구 선수들의 경기 일정, 결과, 순위 등을 제공합니다. 화면 하단에 표시된 발화를 이용해보세요.")
+            }
+            style (Title_XS)
+          }
+          divider
+          single-line {
+            text {
+              value ("현재 등록된 선수들은 다음과 같습니다.")
+              style (Title_XS)
+            }
+          }
+          for-each (result) {
+            as (player) {
+              thumbnail-card {
+                on-click {
+                  intent {
+                    goal: GoToPlayer
+                    value: $expr(player.name)
+                  }
+                }
+                title-area {
+                  halign (Center)
+                  slot1 {
+                    text {
+                      style (Title_S)
+                      value {template ("#{value(player.name)}")}
+                    }
+                  }
+                  slot2 {
+                    single-line {
+                      text {
+                        style (Detail_M_Soft)
+                        value {template ("2019-20 시즌")}
+                      }
+                    }
+                  }
+                  slot3 {
+                    single-line {
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.matchesPlayed)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("경기")}
+                      }
+                      spacer
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.goal)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("득점")}
+                      }
+                      spacer
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.assist)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("도움")}
+                      }
+                    }
+                  }
+                }
+                image-url {
+                  template ("#{value(player.profPic)}")
+                }
+                image-position (Start)
+                image-object-fit (Contain)
+              }
+            }
+          }
+          divider
+          title-area {
+            halign (Center)
+            slot1 {
+              text {
+                value ("추가하고 싶은 선수 및 기능이 있으시다면 리뷰 댓글에 남겨주세요!")
+                style (Title_XS)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (PL)
+    }
+    conversation-driver {
+      template-macro (SON)
+    }
+    conversation-driver {
+      template-macro (PREF-NEW)
+    }
+  }
+}

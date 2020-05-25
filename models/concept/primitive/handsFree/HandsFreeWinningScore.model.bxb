@@ -1,0 +1,3 @@
+integer (HandsFreeWinningScore) {
+  description (Hands Free Mode Winning Score)
+}

@@ -1,0 +1,4 @@
+structure (UEFAStats) {
+  description (UEFA Stats)
+  role-of (LeagueStats)
+}

@@ -1,0 +1,53 @@
+template-macro-def (PLAYER-MATCHES) {
+  params {
+    param (result) {
+      type (Matches)
+      min (Optional)
+      max (Many)
+    }
+  }
+  content {
+    if ($handsFree == true) {
+      if (result[0].matchResult.result == 'W') {
+        template ("#{value(result[0].selectedPlayer)} 선수의 경기 일정입니다.") {
+          speech ("#{value(result[0].playerName)} 선수의 소속팀 #{value(result[0].hfTeam)}의 최근 경기는, #{value(result[0].hfDate)}, #{value(result[0].hfLeague)}, #{value(result[0].hfOpp)} 상대로, 스코어는 #{value(result[0].hfWinningScore)} 대 #{value(result[0].hfLosingScore)}(으)로 승리했습니다. 코로나 사태로 인해 다음 경기는 예정되어 있지 않습니다.")
+        }
+      }
+      else-if (result[0].matchResult.result == 'L') {
+        template ("#{value(result[0].selectedPlayer)} 선수의 경기 일정입니다.") {
+          speech ("#{value(result[0].playerName)} 선수의 소속팀 #{value(result[0].hfTeam)}의 최근 경기는, #{value(result[0].hfDate)}, #{value(result[0].hfLeague)}, #{value(result[0].hfOpp)} 상대로, 스코어는 #{value(result[0].hfWinningScore)} 대 #{value(result[0].hfLosingScore)}(으)로 패배했습니다. 코로나 사태로 인해 다음 경기는 예정되어 있지 않습니다.")
+        }
+      }
+      else {
+        template ("#{value(result[0].selectedPlayer)} 선수의 경기 일정입니다.") {
+          speech ("#{value(result[0].playerName)} 선수의 소속팀 #{value(result[0].hfTeam)}의 최근 경기는, #{value(result[0].hfDate)}, #{value(result[0].hfLeague)}, #{value(result[0].hfOpp)} 상대로, 스코어는 #{value(result[0].hfWinningScore)} 대 #{value(result[0].hfLosingScore)}(으)로 비겼습니다. 코로나 사태로 인해 다음 경기는 예정되어 있지 않습니다.")
+        }
+      }
+    }
+    else {
+      template ("#{value(result[0].selectedPlayer)} 선수의 경기 일정입니다.")
+    }
+  }
+}
+
+template-macro-def (PLAYER-STATS) {
+  params {
+    param (this) {
+      type (PlayerStats)
+      min (Optional)
+      max (Many)
+    }
+  }
+  content {
+    if ($handsFree == true) {
+      template ("#{value(this.name)} 2019/20 시즌 성적") {
+        speech ("<speak>올시즌 #{value(this.name)} 선수는 총 #{value(this.stats.total.matchesPlayed)}경기에 출전하여, #{value(this.stats.total.start)}경기 선발, #{value(this.stats.total.sub)}경기 교체투입, 평균 #{value(this.stats.total.avg)}분을 출전하고 있으며, 골 #{value(this.stats.total.goal)}개, 어시스트 #{value(this.stats.total.assist)}개를 기록하고 있습니다.</speak>")
+      }
+    }
+    else {
+      template ("#{value(this.name)} 2019/20 시즌 성적") {
+        speech ("<speak>올시즌 #{value(this.name)} 선수의 성적입니다.</speak>")
+      }
+    }
+  }
+}

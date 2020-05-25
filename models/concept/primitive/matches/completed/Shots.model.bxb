@@ -1,0 +1,3 @@
+integer (Shots) {
+  description (shots taken)
+}

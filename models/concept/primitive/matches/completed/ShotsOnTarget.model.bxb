@@ -1,0 +1,3 @@
+integer (ShotsOnTarget) {
+  description (shots on target)
+}

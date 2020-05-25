@@ -1,0 +1,3 @@
+name (RegisterAction) {
+  description (input to register preference for the first time)
+}

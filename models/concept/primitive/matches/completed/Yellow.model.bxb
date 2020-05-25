@@ -1,0 +1,3 @@
+integer (Yellow) {
+  description (number of yellow cards)
+}

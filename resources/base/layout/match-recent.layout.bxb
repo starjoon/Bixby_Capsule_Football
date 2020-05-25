@@ -1,0 +1,322 @@
+layout-macro-def(match-recent) {
+  params {
+    param (matchDetails) {
+      type (Matches)
+      min (Optional)
+      max (Many)
+    }
+  }
+  content {
+    compound-card {
+      content {
+        hbox {
+          content {
+            vbox {
+              halign (Start)
+              content {
+                if (exists(matchDetails.game)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.league)} - #{value(matchDetails.game)}차전")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                } else {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.league)}")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+            vbox {
+              halign (End)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.status)}")}
+                    style (Detail_M)
+                    color (Blue)
+                  }
+                }
+              }
+            }
+          }
+        }
+        divider
+        if(!exists(matchDetails.matchResult) && !exists(matchDetails.matchProgress)){
+          hbox {
+            content {
+              vbox {
+                grow (2)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.home_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.home)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                halign (Center)
+                valign (Middle)
+                content {
+                  single-line {
+                    text {
+                      value {template ("vs.")}
+                      style (Title_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.date)}")}
+                      style (Detail_M)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.time)}")}
+                      style (Detail_M_Soft)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.away_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.away)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+            }                                    
+          }
+        } else-if (!exists(matchDetails.matchResult) && exists(matchDetails.matchProgress)) {
+          hbox {
+            content {
+              vbox {
+                grow (3)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.home_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.home)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Top)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.score)}")}
+                      style (Title_XL)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                halign (Center)
+                valign (Bottom)
+                content {
+                  single-line {
+                    text {
+                      value {template ("-")}
+                      style (Title_XL)
+                    }
+                  }
+                  single-line {
+                        text {
+                          value {template ("진행중")}
+                          style (Detail_M)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(matchDetails.matchProgress.time)}'")}
+                          style (Detail_M_Soft)
+                        }
+                      }
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Top)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.score)}")}
+                      style (Title_XL)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (3)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.away_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.away)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+            }                                    
+          }
+          progress-bar (matchDetails.matchProgress.timeProp)
+        } else {
+          hbox {
+            content {
+              vbox {
+                grow (3)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.home_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.home)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Top)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchResult.home.score)}")}
+                      style (Title_XL)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                halign (Center)
+                valign (Bottom)
+                content {
+                  single-line {
+                    text {
+                      value {template ("-")}
+                      style (Title_XL)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.date)}")}
+                      style (Legal)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Top)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchResult.away.score)}")}
+                      style (Title_XL)
+                    }
+                  }
+                }
+              }
+              vbox {
+                grow (3)
+                halign (Center)
+                content {
+                  single-line {
+                    image {
+                      background-color (Transparent)
+                      shape (Square)
+                      style (Title_XL)
+                      url {
+                        template ("#{value(matchDetails.away_logo)}")
+                      }
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.away)}")}
+                      style (Detail_M)
+                    }
+                  }
+                }
+              }
+            }                                    
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+integer (Loss) {
+  description (number of losses)
+}

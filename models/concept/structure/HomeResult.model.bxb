@@ -1,0 +1,51 @@
+structure (HomeResult) {
+  description (home team result info)
+  property (score) {
+    type (Score)
+    min (Required) max (One)
+  }
+  property (scorer) {
+    type (Scorer)
+    min (Optional) max (Many)
+  }
+  property (shots) {
+    type (Shots)
+    min (Required) max (One)
+  }
+  property (shotsOnTarget) {
+    type (ShotsOnTarget)
+    min (Required) max (One)
+  }
+  property (possession) {
+    type (Possession)
+    min (Required) max (One)
+  }
+  property (passes) {
+    type (Passes)
+    min (Optional) max (One)
+  }
+  property (passPer) {
+    type (PassPer)
+    min (Optional) max (One)
+  }
+  property (fouls) {
+    type (Fouls)
+    min (Optional) max (One)
+  }
+  property (yellow) {
+    type (Yellow)
+    min (Optional) max (One)
+  }
+  property (red) {
+    type (Red)
+    min (Optional) max (One)
+  }
+  property (offsides) {
+    type (Offsides)
+    min (Optional) max (One)
+  }
+  property (corners) {
+    type (Corners)
+    min (Optional) max (One)
+  }
+}

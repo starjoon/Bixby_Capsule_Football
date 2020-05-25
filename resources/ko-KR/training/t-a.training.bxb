@@ -1,0 +1,10 @@
+train (t-aha1h981t1vvu3tv329vmfkd5) {
+  utterance ("[g:ShowSchedule] (이재성)[v:PlayerTeam:이재성] (경기 일정)[v:SearchFixture] 볼래")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEALgogA=)
+  last-modified (1571572372356)
+}
+train (t-an1gnu7xbhmqfnblsq81kwvaa) {
+  utterance ("[g:ShowGroups] (챔스)[v:Champions:'UEFA 챔피언스 리그'] (순위)[v:SearchRank] 보여줘")
+  plan (Y2BhEM/Kz8/LTM1KrNRLy88vSUrMydELdXVzZJDFIhGckV/uXpRfWlDMIINF2jkjMbcgMz+vGLvm1MSi5IygxLxsBmYGRgYmIMkApEEQAuCiAA==)
+  last-modified (1571686427303)
+}

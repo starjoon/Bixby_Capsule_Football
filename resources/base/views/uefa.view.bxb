@@ -1,0 +1,213 @@
+result-view {
+  match {
+    UEFA (result)
+  }
+  
+  message {
+    template ("챔스 순위는 다음과 같습니다.")
+  }
+  
+  render {
+    layout {
+      section {
+        content {
+          hbox {
+            content {
+              vbox {
+                grow (5)
+                halign (Start)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("팀")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+              vbox {
+                grow (5)
+                halign (End)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("경기")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("승")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("무")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("패")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+              vbox {
+                grow (2)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value {template ("승점")}
+                    style (Detail_L_Soft)
+                  } 
+                }
+              }
+            }
+          }
+          divider
+          for-each (result) {
+            as (item) {
+              single-line {
+                text ("#{value(item.group)} 조")
+              }
+              for-each (item.standings) {
+                as (team) {
+                  compound-card {
+                  content {
+                    hbox {
+                      content {
+                        vbox {
+                          grow (3)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              image {
+                                shape (Square)
+                                url ("#{value(team.teamPic)}")
+                                style (Title_XL)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (5)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            text {
+                              value {template ("#{value(team.team)}")}
+                              style (Detail_M)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {template ("#{value(team.matchesPlayed)}")}
+                                style (Detail_L)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {template ("#{value(team.win)}")}
+                                style (Detail_L)
+                                color (Green)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {template ("#{value(team.draw)}")}
+                                style (Detail_L)
+                                color (Amber)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {template ("#{value(team.loss)}")}
+                                style (Detail_L)
+                                color (Red)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {template ("#{value(team.points)}")}
+                                style (Detail_L)
+                                color (Blue)
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                }
+              }
+            }
+          }
+        }      
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}

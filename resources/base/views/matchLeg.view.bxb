@@ -1,0 +1,49 @@
+result-view {
+  match {
+    Matches (result) {
+      from-output: GoToLeg
+    }
+  }
+  
+  message {
+    if (exists(result.matchResult)) {
+      template ("경기 결과입니다.")
+    } else {
+      template ("경기 일정은 다음과 같습니다.")
+    }
+  }
+  
+  render {
+    if (!exists(result.matchResult) && !exists(result.matchProgress)) {
+      layout-macro (match-details) {
+        param (matchDetails) {
+          expression (result)
+        }
+      }
+    }
+    else-if (!exists(result.matchResult) && exists(result.matchProgress)) {
+      layout-macro (match-in-progress) {
+        param (matchDetails) {
+          expression (result)
+        }
+      }
+    } else {
+      layout-macro (match-complete) {
+        param (matchDetails) {
+          expression (result)
+        }
+      }
+    }      
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}

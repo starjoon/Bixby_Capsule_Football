@@ -1,0 +1,3 @@
+integer (HomePoints) {
+  description (home team points)
+}

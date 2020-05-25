@@ -1,0 +1,39 @@
+action (ShowSchedule) {
+  type (Search)
+  description (show schedule by team)
+  collect {
+    input (playerTeam) {
+      type (PlayerTeam)
+      min (Required)
+      max (One)
+      default-init {
+        intent {
+          goal: PlayerTeam
+          value: PlayerTeam (손흥민)
+          value: PlayerTeam (황의조)
+          value: PlayerTeam (이강인)
+          value: PlayerTeam (황희찬)
+          value: PlayerTeam (권창훈)
+          value: PlayerTeam (이재성)
+          value: PlayerTeam (백승호)
+          value: PlayerTeam (이승우)
+          // value : PlayerTeam (정우영)
+        }
+      }
+    }
+    input (fixture) {
+      type (SearchFixture)
+      min (Required)
+      max (One)
+    }
+  }
+  output (Matches) {
+    sort {
+      each (match) {
+        sorting (match.recent) {
+          by (Desc)
+        }
+      }
+    }
+  }
+}

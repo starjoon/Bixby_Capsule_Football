@@ -1,0 +1,5 @@
+train (t-p5igok53yq5efz6ypojaqynvg) {
+  utterance ("[g:ShowPlayer] (이승우)[v:PlayerTeam:이승우] (성적)[v:SearchStats] 어떻게 돼")
+  plan (Y2BhkMvKz8/LTM1KrNRLy88vSUrMydELyEmsTC0KLkksKWaQxSIfnJFfDlGDVRoiFZKamIvV9ODUxKLkDIjpzAyMDExAkgFIgyAEwEUB)
+  last-modified (1587051769295)
+}

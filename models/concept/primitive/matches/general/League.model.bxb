@@ -1,0 +1,13 @@
+enum (League) {
+  description (league name)
+  symbol (프리미어 리그)
+  symbol (라리가)
+  symbol (분데스리가)
+  symbol (리그 1)
+  symbol (분데스리가 2부)
+  symbol (오스트리아 분데스리가)
+  symbol (벨기에 프로리그)
+  features {
+    transient
+  }
+}

@@ -1,0 +1,3 @@
+integer (PlayerNumber) {
+  description (player's number)
+}

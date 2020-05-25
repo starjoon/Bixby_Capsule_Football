@@ -1,0 +1,15 @@
+structure (FixtureType) {
+  description (fixture types)
+  property (UEFA) {
+    type (UEFAStats)
+    min (Optional) max (One)
+  }
+  property (league) {
+    type (LeagueStats)
+    min (Optional) max (One)
+  }
+  property (cup) {
+    type (CupStats)
+    min (Optional) max (One)
+  }
+}

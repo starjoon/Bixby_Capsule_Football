@@ -1,0 +1,10 @@
+train (t-30q3f0k9gi8mb1ygnljr8uaw0) {
+  utterance ("[g:ShowPlayer] (이강인)[v:PlayerTeam:이강인] 올 시즌 몇 (골)[v:SearchStats] 넣었어")
+  plan (Y2BhkMvKz8/LTM1KrNRLy88vSUrMydELyEmsTC0KLkksKWaQxSIfnJFfDlGDVRoiFZKamIvV9ODUxKLkDIjpzAyMDExAkgFIgyAEwEUB)
+  last-modified (1571686402587)
+}
+train (t-3no82jrqmlcdzu8vsxzufohky) {
+  utterance ("[g:SavePreference] (즐겨찾기)[v:PreferenceAction] (변경할래)[v:ChangeAction]")
+  plan (Y2BlkM/Kz8/LTM1KrNRLy88vSUrMydHzrQwoSk1LLUrNS05lUMSiIDixLBVJCTYznDMS89JTHZNLMvPzGGSxKEDSr4xXGmoGCwMjAxMDM5BmALIgEAaYwXJAGQA=)
+  last-modified (1571560162384)
+}

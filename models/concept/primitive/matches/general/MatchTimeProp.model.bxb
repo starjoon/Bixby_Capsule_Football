@@ -1,0 +1,3 @@
+integer (MatchTimeProp) {
+  description (match current time in proportion)
+}

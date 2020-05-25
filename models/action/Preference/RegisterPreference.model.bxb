@@ -1,0 +1,19 @@
+action (RegisterPreference) {
+  type (Search)
+  description (registering preference for the first time)
+  collect {
+    input (preference) {
+      type (Preference)
+      min (Required) max (Many)
+    }
+    input (search) {
+      type (PreferenceAction)
+      min (Required) max (One)
+    }
+    input (register) {
+      type (RegisterAction)
+      min (Required) max (One)
+    }
+  }
+  output (MyPreference)
+}

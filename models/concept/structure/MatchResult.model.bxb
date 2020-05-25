@@ -1,0 +1,19 @@
+structure (MatchResult) {
+  description (match result info)
+  property (home) {
+    type (HomeResult)
+    min (Required) max (One)
+  }
+  property (away) {
+    type (AwayResult)
+    min (Required) max (One)
+  }
+  property (result) {
+  type (HandsFreeResult)
+  min (Optional) max (Many)
+  }
+  property (HL) {
+  type (Highlight)
+  min (Optional) max (Many)
+  }
+}

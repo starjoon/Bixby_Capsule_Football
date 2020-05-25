@@ -1,0 +1,3 @@
+integer (AwayPoints) {
+  description (away team points)
+}

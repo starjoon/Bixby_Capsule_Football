@@ -1,0 +1,19 @@
+action (SavePreference) {
+  type (Search)
+  description (Save/Alter Player Preference)
+  collect {
+    input (preference) {
+      type (Preference)
+      min (Required) max (Many)
+    }
+    input (search) {
+      type (PreferenceAction)
+      min (Required) max (One)
+    }
+    input (change) {
+      type (ChangeAction)
+      min (Required) max (One)
+    }
+  }
+  output (MyPreference)
+}

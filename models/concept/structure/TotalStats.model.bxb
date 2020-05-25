@@ -1,0 +1,27 @@
+structure (TotalStats) {
+  description (this season stats total)
+  property (matchesPlayed) {
+    type (MatchesPlayed)
+    min (Required) max (Many)
+  }
+  property (start) {
+    type (Start)
+    min (Required) max (Many)
+  }
+  property (sub) {
+    type (Sub)
+    min (Required) max (Many)
+  }
+  property (avg) {
+    type (AvgMin)
+    min (Required) max (Many)
+  }
+  property (goal) {
+    type (Goals)
+    min (Required) max (Many)
+  }
+  property (assist) {
+    type (Assists)
+    min (Required) max (Many)
+  }
+}

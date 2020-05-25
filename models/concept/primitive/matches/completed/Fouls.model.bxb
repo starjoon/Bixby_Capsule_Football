@@ -1,0 +1,3 @@
+integer (Fouls) {
+  description (number of fouls)
+}

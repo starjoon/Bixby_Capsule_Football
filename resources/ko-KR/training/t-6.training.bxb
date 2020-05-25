@@ -1,0 +1,15 @@
+train (t-6j2voyivxdqqekvaliql17rqh) {
+  utterance ("[g:ShowPlayer] (손흥민)[v:PlayerTeam:손흥민] (성적)[v:SearchStats] 궁금해")
+  plan (Y2BhkMvKz8/LTM1KrNRLy88vSUrMydELyEmsTC0KLkksKWaQxSIfnJFfDlGDVRoiFZKamIvV9ODUxKLkDIjpzAyMDExAkgFIgyAEwEUB)
+  last-modified (1571686409272)
+}
+train (t-6xxgw8tsw1l6p09apcv9qqr1q) {
+  utterance ("[g:FindMatches] (경기 결과)[v:SearchFixture] 보고싶어")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAAmIAsoBgA=)
+  last-modified (1571811392474)
+}
+train (t-6zf23qiwft9y95zhq4ce0qsvn) {
+  utterance ([g:ShowGuide] 가이드 볼래)
+  plan (Y2BikMjKz8/LTM1KrNRLy88vSUrMydFzL81MSWWQwSITnJFfDpFlBEIGKAaSAA==)
+  last-modified (1571678607006)
+}

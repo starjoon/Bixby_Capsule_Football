@@ -1,0 +1,35 @@
+structure (MatchStats) {
+  description (Individual Match Stats)
+  property (date) {
+    type (Date)
+    min (Required) max (One)
+  }
+  property (opp) {
+    type (PlayerName)
+    min (Required) max (One)
+  }
+  property (oppPic) {
+    type (PlayerPic)
+    min (Required) max (One)
+  }
+  property (start) {
+    type (PlayerStart)
+    min (Required) max (One)
+  }
+  property (min) {
+    type (MatchesPlayed)
+    min (Required) max (One)
+  }
+  property (goal) {
+    type (Goals)
+    min (Required) max (One)
+  }
+  property (assist) {
+    type (Assists)
+    min (Required) max (One)
+  }
+  property (matchID) {
+    type (MatchID)
+    min (Required) max (One)
+  }
+}

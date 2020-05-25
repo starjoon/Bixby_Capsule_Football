@@ -1,0 +1,3 @@
+integer (Win) {
+  description (number of wins)
+}

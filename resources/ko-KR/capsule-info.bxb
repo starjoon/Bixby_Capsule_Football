@@ -1,0 +1,23 @@
+capsule-info {
+  display-name (코리안리거)
+  developer-name (Joon Choi)
+  icon-asset (/images/icon.png)
+  description ("해외에서 활동중인 한국 축구 선수들에 대해 알아보세요! 검색 가능한 선수들은 캡슐 사용법을 통해 확인하세요.")
+  //website-url (https://example.com/)
+  search-keywords {
+    keyword (축구)
+    keyword (해외)
+    keyword (프리미어 리그)
+    keyword (라리가)
+    keyword (분데스리가)
+    keyword (리그 앙)
+    keyword (손흥민)
+    keyword (이강인)
+    keyword (황의조)
+    keyword (이승우)
+  }
+  dispatch-name (코리안리거)
+  dispatch-aliases {
+    alias (코리안리그)
+  }
+}

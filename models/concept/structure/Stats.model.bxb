@@ -1,0 +1,11 @@
+structure (Stats) {
+  description (player statistics)
+  property (total) {
+    type (TotalStats)
+    min (Required) max (Many)
+  }
+  property (fixture) {
+    type (FixtureType)
+    min (Required) max (Many)
+  }
+}

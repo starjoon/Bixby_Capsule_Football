@@ -1,0 +1,4 @@
+structure (CupStats) {
+  description (League Cup Stats)
+  role-of (LeagueStats)
+}

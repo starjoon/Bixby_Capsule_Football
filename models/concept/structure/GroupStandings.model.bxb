@@ -1,0 +1,4 @@
+structure (GroupStandings) {
+  description (UEFA Group Standings)
+  role-of (Standings)
+}

@@ -1,0 +1,15 @@
+train (t-9fzs4ac63gl5jygj3fc25p8ho) {
+  utterance ("[g:FindMatches] (이번 주)[v:Period:이번주] (경기)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAC4KAA=)
+  last-modified (1571554057427)
+}
+train (t-9o80np8rovn8k3fvj98krmixg) {
+  utterance ("[g:ShowSchedule] 선수 (경기)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEAKYgCygGAA=)
+  last-modified (1571683134267)
+}
+train (t-9x5i9ttsj4dtzduid10y0ov6y) {
+  utterance ("[g:ShowSchedule] (손흥민)[v:PlayerTeam:손흥민] (경기)[v:SearchFixture] 볼래")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEALgogA=)
+  last-modified (1571551836163)
+}

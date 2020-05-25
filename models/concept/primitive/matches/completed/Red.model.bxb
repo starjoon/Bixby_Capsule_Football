@@ -1,0 +1,3 @@
+integer (Red) {
+  description (number of red cards)
+}

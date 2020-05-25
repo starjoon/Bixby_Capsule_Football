@@ -1,0 +1,9 @@
+result-view {
+  match: HighlightURL (this)
+  
+  message()
+  
+  app-launch {
+    payload-uri ("#{value(this)}")
+  }
+}

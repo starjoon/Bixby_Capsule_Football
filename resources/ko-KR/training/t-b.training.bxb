@@ -1,0 +1,5 @@
+train (t-bndxp56eb6ivoixe53xfs6hwl) {
+  utterance ("[g:FindMatches] (경기 결과)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAAmIAsoBgA=)
+  last-modified (1571811167361)
+}

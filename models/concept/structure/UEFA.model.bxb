@@ -1,0 +1,11 @@
+structure (UEFA) {
+  description (UEFA Group Standings)
+  property (group) {
+    type (Group)
+    min (Required) max (One)
+  }
+  property (standings) {
+    type (GroupStandings)
+    min (Required) max (Many)
+  }
+}

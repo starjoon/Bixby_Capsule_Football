@@ -1,0 +1,39 @@
+structure (Guide) {
+  description (guide/manual for bixby capsule)
+  property (name) {
+    type (PlayerName)
+    min (Required) max (Many)
+  }
+  property (team) {
+    type (Team)
+    min (Required) max (Many)
+  }
+  property (age) {
+    type (PlayerAge)
+    min (Required) max (Many)
+  }
+  property (position) {
+    type (PlayerPosition)
+    min (Required) max (Many)
+  }
+  property (number) {
+    type (PlayerNumber)
+    min (Required) max (Many)
+  }
+  property (profPic) {
+    type (PlayerPic)
+    min (Required) max (Many)
+  }
+  property (matchesPlayed) {
+    type (MatchesPlayed)
+    min (Required) max (Many)
+  }
+  property (goal) {
+    type (Goals)
+    min (Required) max (Many)
+  }
+  property (assist) {
+    type (Assists)
+    min (Required) max (Many)
+  }
+}

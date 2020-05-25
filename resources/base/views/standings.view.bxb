@@ -1,0 +1,256 @@
+result-view {
+  match {
+    Standings (result)
+  }
+  message {
+    template ("리그 순위는 다음과 같습니다.")
+  }
+  render {
+    if ($handsFree == true) {
+      list-of (result) {
+        navigation-mode {
+          read-many {
+            page-size (20)
+            list-summary ("리그 순위는 다음과 같습니다.")
+            page-content {
+              underflow-statement (리그 순위입니다)
+              overflow-statement (리그 순위입니다)
+            }
+          }
+        }
+        has-details (false)
+        where-each (team) {
+          spoken-summary ("#{value(team.rank)}위, #{value(team.team)}, #{value(team.points)}점.")
+          single-line {
+            text {
+              value ("")
+            }
+          }
+        }
+      }
+    }
+    else {
+      layout {
+        section {
+          content {
+            hbox {
+              content {
+                vbox {
+                  grow (5)
+                  halign (Start)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("팀")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                vbox {
+                  grow (5)
+                  halign (End)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("경기")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                vbox {
+                  grow (1)
+                  halign (Center)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("승")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                vbox {
+                  grow (1)
+                  halign (Center)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("무")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                vbox {
+                  grow (1)
+                  halign (Center)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("패")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  halign (Center)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("승점")
+                      }
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+            divider
+            for-each (result) {
+              as (item) {
+                compound-card {
+                  content {
+                    hbox {
+                      content {
+                        vbox {
+                          grow (3)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              image {
+                                shape (Square)
+                                url ("#{value(item.teamPic)}")
+                                style (Title_XL)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (5)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            text {
+                              value {
+                                template ("#{value(item.team)}")
+                              }
+                              style (Detail_M)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {
+                                  template ("#{value(item.matchesPlayed)}")
+                                }
+                                style (Detail_L)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {
+                                  template ("#{value(item.win)}")
+                                }
+                                style (Detail_L)
+                                color (Green)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {
+                                  template ("#{value(item.draw)}")
+                                }
+                                style (Detail_L)
+                                color (Amber)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {
+                                  template ("#{value(item.loss)}")
+                                }
+                                style (Detail_L)
+                                color (Red)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (1)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              text {
+                                value {
+                                  template ("#{value(item.points)}")
+                                }
+                                style (Detail_L)
+                                color (Blue)
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (PL)
+    }
+    conversation-driver {
+      template-macro (LIG1)
+    }
+    conversation-driver {
+      template-macro (LIGA)
+    }
+    conversation-driver {
+      template-macro (BUND)
+    }
+  }
+}

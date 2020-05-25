@@ -1,0 +1,94 @@
+input-view {
+  match {
+    Preference (preference) {
+      to-input: SavePreference
+    }
+  }
+
+  message {
+    if ($can.device != 'bixby-mobile') {
+      template ("즐겨찾기 재설정") {
+        speech ("즐겨찾기 재설정은 모바일에서 선택해주세요.")
+      }
+    }
+    else {
+      template ("즐겨찾기 재설정") {
+        speech ("좋아하는 선수를 다시 선택해주세요!")
+      }
+    }
+  }
+  
+  render {
+    form {
+      elements {
+        checkbox {
+          id (preference)
+          type (Preference)
+          primary-text ("손흥민")
+          secondary-text ("토트넘")
+          value (false)
+        }
+        checkbox {
+          id (preference2)
+          type (Preference)
+          primary-text ("황의조")
+          secondary-text ("보르도")
+          value (false)
+        }
+        checkbox {
+          id (preference3)
+          type (Preference)
+          primary-text ("이강인")
+          secondary-text ("발레시아")
+          value (false)
+        }
+        checkbox {
+          id (preference4)
+          type (Preference)
+          primary-text ("황희찬")
+          secondary-text ("잘츠부르크")
+          value (false)
+        }
+        checkbox {
+          id (preference5)
+          type (Preference)
+          primary-text ("권창훈")
+          secondary-text ("프라이부르크")
+          value (false)
+        }
+        checkbox {
+          id (preference6)
+          type (Preference)
+          primary-text ("이재성")
+          secondary-text ("홀슈타인 킬")
+          value (false)
+        }
+        checkbox {
+          id (preference7)
+          type (Preference)
+          primary-text ("백승호")
+          secondary-text ("다름슈타트")
+          value (false)
+        }
+        checkbox {
+          id (preference8)
+          type (Preference)
+          primary-text ("이승우")
+          secondary-text ("신트트라위던")
+          value (false)
+        }
+      }
+      on-submit {
+        goal: Preference
+        value: viv.core.FormElement (preference)
+        value: viv.core.FormElement (preference2)
+        value: viv.core.FormElement (preference3)
+        value: viv.core.FormElement (preference4)
+        value: viv.core.FormElement (preference5)
+        value: viv.core.FormElement (preference6)
+        value: viv.core.FormElement (preference7)
+        value: viv.core.FormElement (preference8)
+      }
+    }
+  }
+}

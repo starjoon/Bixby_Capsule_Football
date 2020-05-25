@@ -1,0 +1,10 @@
+train (t-m4y3r5ymueyecoe8vpopci20n) {
+  utterance ("[g:ShowSchedule] (이강인)[v:PlayerTeam:이강인] (경기 일정)[v:SearchFixture] 보고싶어")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEALgogA=)
+  last-modified (1571572107661)
+}
+train (t-ml8sxkhmx4bmv1fzbg4lxipbz) {
+  utterance ("[g:FindMatches] (이번 주)[v:Period:이번주] (경기)[v:SearchFixture] 궁금해")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAC4KAA=)
+  last-modified (1571810955539)
+}

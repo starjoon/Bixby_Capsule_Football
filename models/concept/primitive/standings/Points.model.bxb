@@ -1,0 +1,3 @@
+integer (Points) {
+  description (team's points)
+}

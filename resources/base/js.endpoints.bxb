@@ -1,0 +1,64 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (FindMatches) {
+      accepted-inputs (period,fixture,$vivContext)
+      local-endpoint (getMatches.js)
+    }
+    action-endpoint (FindMatchesPOST) {
+      accepted-inputs (preference,period,fixture,$vivContext)
+      local-endpoint (getMatchesPOST.js)
+    }
+    action-endpoint (ShowSchedule) {
+      accepted-inputs (playerTeam,fixture,$vivContext)
+      local-endpoint (getSchedule.js)
+    }
+    action-endpoint (ShowStandings) {
+      accepted-inputs (league,rank)
+      local-endpoint (getStandings.js)
+    }
+    action-endpoint (ShowGroups) {
+      accepted-inputs (league,rank)
+      local-endpoint (getStandings.js)
+    }
+    action-endpoint (ShowGuide) {
+      accepted-inputs ()
+      local-endpoint (showGuide.js)
+    }
+    action-endpoint (GoToStandings) {
+      accepted-inputs (league,rank)
+      local-endpoint (getStandings.js)
+    }
+    action-endpoint (GoToGroups) {
+      accepted-inputs (league,rank)
+      local-endpoint (getStandings.js)
+    }
+    action-endpoint (CheckPreference) {
+      accepted-inputs (search,$vivContext)
+      local-endpoint (checkPreference.js)
+    }
+    action-endpoint (RegisterPreference) {
+      accepted-inputs (preference,search,register,$vivContext)
+      local-endpoint (registerPreference.js)
+    }
+    action-endpoint (SavePreference) {
+      accepted-inputs (preference,search,change,$vivContext)
+      local-endpoint (savePreference.js)
+    }
+    action-endpoint (ShowPlayer) {
+      accepted-inputs (playerTeam,stats,$vivContext)
+      local-endpoint (showPlayer.js)
+    }
+    action-endpoint (GoToPlayer) {
+      accepted-inputs (playerTeam,stats)
+      local-endpoint (showPlayer.js)
+    }
+    action-endpoint (GoToMatch) {
+      accepted-inputs (matchID)
+      local-endpoint (getMatch.js)
+    }
+    action-endpoint (GoToLeg) {
+      accepted-inputs (league,playerName,game)
+      local-endpoint (getLeg.js)
+    }
+  }   
+}

@@ -1,0 +1,11 @@
+action (GoToMatch) {
+  type (Constructor)
+  description (go to selected match)
+  collect {
+    input (matchID) {
+      type (MatchID)
+      min (Required) max (One)
+    }
+  }
+  output (Matches)
+}

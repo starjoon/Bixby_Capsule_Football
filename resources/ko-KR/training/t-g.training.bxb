@@ -1,0 +1,10 @@
+train (t-ggnyg71j2o6zfgl83ixdyopro) {
+  utterance ("[g:ShowStandings] (분데스리가 이부)[v:League:'분데스리가 2부'] (순위)[v:SearchRank] 볼래")
+  plan (Y2BhkMnKz8/LTM1KrNRLy88vSUrMydELLknMS8nMSy9mUMAmm5FfjlAhiUWFT2piemkqgyw2zamJRckZQYl52QzMDIwMTECSAUiDIATARQE=)
+  last-modified (1571553806099)
+}
+train (t-gx7vm726fvjkthmivcfvlq52v) {
+  utterance ([g:ShowGuide] 사용법 알려줘)
+  plan (Y2BikMjKz8/LTM1KrNRLy88vSUrMydFzL81MSWWQwSITnJFfDpFlBEIGKAaSAA==)
+  last-modified (1571678690542)
+}

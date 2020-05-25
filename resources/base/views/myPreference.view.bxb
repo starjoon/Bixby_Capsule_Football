@@ -1,0 +1,104 @@
+result-view {
+  match {
+    MyPreference (result)
+  }
+  
+   message {
+    template ("즐겨찾기 설정 완료!") {
+      speech ("<speak>즐겨찾기가 설정되었습니다.</speak>")
+    }
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          paragraph {
+            value {
+              template ("즐겨찾기 변경을 원하신다면,\n'즐겨찾기 변경할래' 라고 말해보세요.")
+            }
+            style (Title_XS)
+          }
+          for-each (result) {
+            as (player) {
+              thumbnail-card {
+                on-click {
+                  intent {
+                    goal: GoToPlayer
+                    value: $expr(player.name)
+                  }
+                }
+                title-area {
+                  halign (Center)
+                  slot1 {
+                    text {
+                      style (Title_S)
+                      value {template ("#{value(player.name)}")}
+                    }
+                  }
+                  slot2 {
+                    single-line {
+                      text {
+                        style (Detail_M_Soft)
+                        value {template ("2019-20 시즌")}
+                      }
+                    }
+                  }
+                  slot3 {
+                    single-line {
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.matchesPlayed)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("경기")}
+                      }
+                      spacer
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.goal)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("득점")}
+                      }
+                      spacer
+                      text {
+                        style (Title_L)
+                        value {template ("#{value(player.assist)}")}
+                      }
+                      spacer
+                      text {
+                        style (Detail_M)
+                        value {template ("도움")}
+                      }
+                    }
+                  }
+                }
+                image-url {
+                  template ("#{value(player.profPic)}")
+                }
+                image-position (Start)
+                image-object-fit (Contain)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}

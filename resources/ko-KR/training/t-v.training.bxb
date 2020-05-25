@@ -1,0 +1,5 @@
+train (t-vpldhmpf6m9qkcksv19cglpzl) {
+  utterance ("[g:ShowStandings] (프리미어리그)[v:League:'프리미어 리그'] (순위)[v:SearchRank] 보여줄래")
+  plan (Y2BhkMnKz8/LTM1KrNRLy88vSUrMydELLknMS8nMSy9mUMAmm5FfjlAhiUWFT2piemkqgyw2zamJRckZQYl52QzMDIwMTECSAUiDIATARQE=)
+  last-modified (1571571758526)
+}

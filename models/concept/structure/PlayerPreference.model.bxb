@@ -1,0 +1,7 @@
+structure (PlayerPreference) {
+  description (player preference chosen)
+  property (playerName) {
+    type (Preference)
+    min (Required ) max (Many)
+  }
+}

@@ -1,0 +1,15 @@
+action (OpenYouTube) {
+  description (open YouTube)
+  type (Constructor)
+  collect {
+    input (url) {
+      type (HighlightURL)
+      min (Optional) max (Many)
+    }
+  }
+  output (HighlightURL) {
+    evaluate {
+      $expr(url)
+    }
+  }
+}

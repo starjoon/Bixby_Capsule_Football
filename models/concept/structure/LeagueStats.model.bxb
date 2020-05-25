@@ -1,0 +1,11 @@
+structure (LeagueStats) {
+  description (League stats by player)
+  property (type) {
+    type (PlayerName)
+    min (Required) max (One)
+  }
+  property (matches) {
+    type (MatchStats)
+    min (Required) max (Many)
+  }
+}

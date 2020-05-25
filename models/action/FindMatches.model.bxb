@@ -1,0 +1,53 @@
+action (FindMatches) {
+  type (Search)
+  description (show this week's football fixtures)
+  collect {
+    input (period) {
+      type (Period)
+      min (Required) max (One)
+      default-init {
+        intent {
+          goal : Period
+          value : Period (이번주)
+          value : Period (지난주)
+          value : Period (다음주)
+        }
+      }
+    }
+    input (fixture) {
+      type (SearchFixture)
+      min (Required) max (One)
+    }
+  }
+  output (Matches) {
+    throws {
+      error (UserNotRegistered) {
+        on-catch {
+          replan {
+            intent {
+              goal: FindMatchesPOST
+              value: $expr(period)
+              value: $expr(fixture)
+            }
+          }
+        }
+      }
+      error (RegisterOnMobile) {
+        on-catch {
+          halt {
+            dialog {
+              template ("이런, 즐겨찾기 선수가 등록되어있지 않네요. 먼저 모바일에서 즐겨찾기 선수를 설정해주세요.")
+            }
+          }
+        }
+      }
+    }
+    sort {
+      each (match) {
+        sorting (match.highlight) {
+          by (Desc)
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+result-view {
+  match {
+    Matches (result) {
+      from-output: ShowSchedule
+    }
+  }
+  
+   message {
+     template-macro (PLAYER-MATCHES) {
+       param (result) {
+         expression (result)
+       }
+     }
+  }
+  
+  render {
+    if (size(result) == 1) {
+      if (!exists(result.matchResult) && !exists(result.matchProgress)) {
+        layout-macro (match-details) {
+          param (matchDetails) {
+            expression (result)
+          }
+        }
+      }
+      if (!exists(result.matchResult) && exists(result.matchProgress)) {
+        layout-macro (match-in-progress) {
+          param (matchDetails) {
+            expression (result)
+          }
+        }
+      } else {
+        layout-macro (match-complete) {
+          param (matchDetails) {
+            expression (result)
+          }
+        }
+      }     
+    } else {
+      list-of (result) {
+        has-details (true)
+        where-each (item) {
+          if (item.recent == 1) {
+            layout-macro (match-recent) {
+              param (matchDetails) {
+                expression (item)
+              }
+            }
+          } else {
+            layout-match (item) {
+              mode (Summary)
+            }
+          }
+        }
+      }
+    }   
+  }
+  conversation-drivers {
+    conversation-driver {
+      template ("#{value(result[0].selectedPlayer)} 성적 보여줘")
+    }
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}

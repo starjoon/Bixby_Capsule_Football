@@ -1,0 +1,3 @@
+integer (PassPer) {
+  description (passing percentage)
+}

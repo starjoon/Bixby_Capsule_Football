@@ -1,0 +1,5 @@
+train (t-ltu3nd5mfnecsaentjdupu2ct) {
+  utterance ("[g:FindMatches] (다음 주)[v:Period:다음주] (경기)[v:SearchFixture] 알려줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAC4KAA=)
+  last-modified (1571554045548)
+}

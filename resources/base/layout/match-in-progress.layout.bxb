@@ -1,0 +1,484 @@
+layout-macro-def(match-in-progress) {
+  params {
+    param (matchDetails) {
+      type (Matches)
+      min (Optional)
+      max (Many)
+    }
+  }
+
+  content {
+    section {  // this macro returns a "section"
+      content {
+        hbox {
+          content {
+            vbox {
+              halign (Start)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.league)}")}
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            }
+            if (exists(matchDetails.game)) {
+              vbox {
+                halign (End)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.game)}차전")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        title-area {
+          halign (Center)
+          slot1 {
+            text {
+              value {template ("#{value(matchDetails.date)}")}
+              style (Title_XS)
+            }
+          }
+          slot2 {
+            single-line {
+              text {
+                value {template ("#{value(matchDetails.venue)}")}
+                style (Detail_M_Soft)
+              }
+            }
+          }
+        }
+        divider
+        title-area {
+          halign (Center)
+          slot1 {
+            single-line {
+              text {
+                value {template ("#{value(matchDetails.matchProgress.time)}'")}
+                style (Title_XS)
+                color (Blue)
+              }
+            }
+          }
+        }
+        hbox {
+          content {
+            vbox {
+              grow (2)
+              halign (Center)
+              content {
+                single-line {
+                  image {
+                    background-color (Transparent)
+                    shape (Square)
+                    style (Title_XL)
+                    url {
+                      template ("#{value(matchDetails.home_logo)}")
+                    }
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.home)}")}
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              valign (Middle)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.home.score)}")}
+                    style (Title_XL)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              valign (Middle)
+              content {
+                single-line {
+                  text {
+                    value {template ("-")}
+                    style (Title_XL)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              valign (Middle)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.away.score)}")}
+                    style (Title_XL)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (2)
+              halign (Center)
+              content {
+                single-line {
+                  image {
+                    background-color (Transparent)
+                    shape (Square)
+                    style (Title_XL)
+                    url {
+                      template ("#{value(matchDetails.away_logo)}")
+                    }
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.away)}")}
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+          }                                    
+        }
+        divider
+        hbox {
+          content {
+            vbox {
+              grow(5)
+              halign (Start)
+              content {
+                if (!exists(matchDetails.matchProgress.home.scorer)) {
+                  text {
+                    value {template(.)}
+                    style (Legal)
+                  }
+                } else {
+                  for-each (matchDetails.matchProgress.home.scorer) {
+                    as (scorer) {
+                      single-line {
+                        text {
+                          value {template("#{value(scorer)}")}
+                          style (Detail_M_Soft)
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            vbox {
+              grow(1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template("⚽️")}
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow(5)
+              halign (End)
+              content {
+                if (!exists(matchDetails.matchProgress.away.scorer)) {
+                  text {
+                    value {template(.)}
+                    style (Legal)
+                  }
+                } else {
+                  for-each (matchDetails.matchProgress.away.scorer) {
+                    as (scorer) {
+                      single-line {
+                        text {
+                          value {template("#{value(scorer)}")}
+                          style (Detail_M_Soft)
+                        }
+                      }
+                    }
+                  }
+                } 
+              }
+            }
+          }
+        }
+        divider
+        hbox {
+          content {
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.home.shots)}")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.home.shotsOnTarget)}")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.home.possession)}%")}
+                    style (Detail_L)
+                  }
+                }
+                if (exists(matchDetails.matchProgress.home.passes)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.passes)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.passPer)}%")}
+                      style (Detail_L)
+                    }
+                  }
+                }
+                if (exists(matchDetails.matchProgress.home.fouls)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.fouls)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.yellow)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.red)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.offsides)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.home.corners)}")}
+                      style (Detail_L)
+                    }
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("슈팅")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("유효 슈팅")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("점유율")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                if (exists(matchDetails.matchProgress.home.passes)) {
+                  single-line {
+                    text {
+                      value {template ("패스")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("패스 성공률")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                if (exists(matchDetails.matchProgress.home.fouls)) {
+                  single-line {
+                    text {
+                      value {template ("파울")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  single-line {
+                    image {
+                      url ("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Yellow_card.svg/1200px-Yellow_card.svg.png")
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    image {
+                      url ("https://pngimage.net/wp-content/uploads/2018/06/red-card-png-.png")
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("오프사이드")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("코너킥")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.away.shots)}")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.away.shotsOnTarget)}")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.matchProgress.away.possession)}%")}
+                    style (Detail_L)
+                  }
+                }
+                if (exists(matchDetails.matchProgress.away.passes)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.passes)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.passPer)}%")}
+                      style (Detail_L)
+                    }
+                  }
+                }
+                if (exists(matchDetails.matchProgress.away.fouls)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.fouls)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.yellow)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.red)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.offsides)}")}
+                      style (Detail_L)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.matchProgress.away.corners)}")}
+                      style (Detail_L)
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        if (matchDetails.type != '컵') {
+          title-card {
+            on-click {
+              if (matchDetails.league == 'UEFA 챔피언스 리그') {
+                intent {
+                  goal: GoToGroups
+                  value: $expr(matchDetails.league)
+                }
+              } else-if (exists(matchDetails.game)) {
+                intent {
+                  goal: GoToLeg
+                  value: $expr(matchDetails.league)
+                  value: $expr(matchDetails.playerName)
+                  value: $expr(matchDetails.game)
+                }
+              } else {
+                intent {
+                  goal: GoToStandings
+                  value: $expr(matchDetails.league)
+                }
+              }
+            }
+            title-area {
+              halign (Center)
+              slot1 {
+                if (exists(matchDetails.game) && matchDetails.game == '1') {
+                  text {
+                    value {template ("2차전 경기 바로가기")}
+                    style (Detail_L)
+                  }
+                } else-if (exists(matchDetails.game) && matchDetails.game == '2') {
+                  text {
+                    value {template ("1차전 경기 바로가기")}
+                    style (Detail_L)
+                  }
+                } else {
+                  text {
+                    value {template ("#{value(matchDetails.league)} 순위 보기")}
+                    style (Detail_L)
+                  }
+                }
+              }
+            }
+          }
+        }    
+      }
+    }
+  }
+}

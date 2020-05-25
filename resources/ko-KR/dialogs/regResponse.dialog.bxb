@@ -1,0 +1,28 @@
+template-macro-def (NO-MATCH) {
+  content: template ("경기 일정이 없습니다.") {
+    speech ("<speak>코로나 사태로 인해 모든 대회가 중단되었습니다. 재개되면 알려드릴게요.</speak>")
+  }
+}
+
+template-macro-def (ONE-MATCH) {
+  content: template ("경기 일정은 다음과 같습니다.")
+}
+
+template-macro-def (MATCH) {
+  content: template ("경기 일정은 다음과 같습니다.")
+}
+
+template-macro-def (CAPSULE-GUIDE) {
+  content {
+    if ($handsFree == true) {
+      template ("코리안리거 캡슐 소개") {
+        speech ("<speak>코리안리거 캡슐을 사용해주셔서 감사합니다. 본 캡슐은 현재 해외에서 활동 중인 한국 축구 선수들의 경기 일정, 결과, 순위 등을 제공하고 있으며, 현재 등록된 선수들은 다음과 같습니다: 손흥민, 황의조, 이강인, 황희찬, 권창훈, 이재성, 백승호, 이승우. 추가하고 싶은 선수 및 기능이 있으시다면 리뷰 댓글에 남겨주세요!</speak>")
+      }
+    }
+    else {
+      template ("코리안리거 캡슐 소개") {
+        speech ("<speak>캡슐을 사용해주셔서 감사합니다. 사용법은 아래와 같습니다.</speak>")
+      }
+    }
+  }
+}

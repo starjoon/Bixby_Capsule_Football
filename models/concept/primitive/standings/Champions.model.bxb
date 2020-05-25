@@ -1,0 +1,4 @@
+enum (Champions) {
+  description (Champions league group standings input)
+  symbol (UEFA 챔피언스 리그)
+}

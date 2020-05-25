@@ -1,0 +1,10 @@
+train (t-tfykid1kzizh5qndos817hno6) {
+  utterance ("[g:ShowSchedule] 차범근 (경기)[v:SearchFixture] 보고싶어")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEAKYgCygGAA=)
+  last-modified (1571686776541)
+}
+train (t-tlr8ftpzhq2x41vek9ozaawnb) {
+  utterance ("[g:FindMatches] (경기 일정)[v:SearchFixture] 궁금해")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAAmIAsoBgA=)
+  last-modified (1571811135403)
+}

@@ -1,0 +1,3 @@
+text (PlayerPosition) {
+  description (player's position)
+}

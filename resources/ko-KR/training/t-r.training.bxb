@@ -1,0 +1,5 @@
+train (t-rmr59ajlqasl1h4gdwqpqhrjr) {
+  utterance ("[g:FindMatches] (지난주)[v:Period:지난주] (경기)[v:SearchFixture] 보여줄래")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDDIueWmZcCk5fEIh+QWpSZn8KggEUqODWxKDnDLbOipLQolYGZgZGBCUgyAGkQhAC4KAA=)
+  last-modified (1571554050648)
+}

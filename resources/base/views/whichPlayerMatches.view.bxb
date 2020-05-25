@@ -1,0 +1,33 @@
+input-view {
+ match : PlayerTeam (player) {
+  to-input : ShowSchedule
+ }
+ 
+ message{
+  template-macro (WHICH-PLAYER-MATCH)
+ }
+ 
+ render {
+  selection-of (player) {
+    where-each (one) {
+      compound-card{
+        content{
+          title-card{
+            title-area{
+              halign (Center)
+              slot1{
+                text{
+                  style(Title_XS)
+                  value{
+                    template ("#{value(one)}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  } 
+}

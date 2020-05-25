@@ -1,0 +1,8 @@
+legal {
+  country-documents {
+    store-country (KR)
+    privacy-policy {
+      url (https://jayshwah.github.io/bixbyfootball/privacy-policy)
+    }
+  }
+}

@@ -1,0 +1,3 @@
+name (PreferenceAction) {
+  description (input to initiate preference change)
+}

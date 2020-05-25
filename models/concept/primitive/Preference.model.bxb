@@ -1,0 +1,6 @@
+boolean (Preference) {
+  description (player preference)
+  features {
+    transient
+  }
+}

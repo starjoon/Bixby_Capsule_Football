@@ -1,0 +1,15 @@
+action (ShowGroups) {
+  type (Search)
+  description (show league standings)
+  collect {
+    input (league) {
+      type (Champions)
+      min (Required) max (One)
+    }
+    input (rank) {
+      type (SearchRank)
+      min (Optional) max (One)
+    }
+  }
+  output (UEFA)
+}

@@ -1,0 +1,6 @@
+enum (Period) {
+  description (indicate period to find matches)
+  symbol (이번주)
+  symbol (지난주)
+  symbol (다음주)
+}

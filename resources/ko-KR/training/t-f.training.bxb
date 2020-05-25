@@ -1,0 +1,5 @@
+train (t-fn01dauc9n6ll4tw59akj0dpd) {
+  utterance ("[g:ShowSchedule] (손흥민 선수)[v:PlayerTeam:손흥민] (경기)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEALgogA=)
+  last-modified (1571554656700)
+}

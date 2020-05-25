@@ -1,0 +1,35 @@
+structure (Standings) {
+  description (league standings)
+  property (rank) {
+    type (PlayerAge)
+    min (Required) max (One)
+  }
+  property (team) {
+    type (Team)
+    min (Required) max (One)
+  }
+  property (teamPic) {
+    type (TeamPic)
+    min (Required) max (One)
+  }
+  property (matchesPlayed) {
+    type (MatchesPlayed)
+    min (Required) max (One)
+  }
+  property (win) {
+    type (Win)
+    min (Required) max (One)
+  }
+  property (draw) {
+    type (Draw)
+    min (Required) max (One)
+  }
+  property (loss) {
+    type (Loss)
+    min (Required) max (One)
+  }
+  property (points) {
+    type (Points)
+    min (Required) max (One)
+  }
+}

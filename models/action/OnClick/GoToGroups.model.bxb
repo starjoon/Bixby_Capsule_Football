@@ -1,0 +1,15 @@
+action (GoToGroups) {
+  type (Constructor)
+  description (show champions league group standings)
+  collect {
+    input (league) {
+      type (Team)
+      min (Required) max (One)
+    }
+    input (rank) {
+      type (SearchRank)
+      min (Optional) max (One)
+    }
+  }
+  output (UEFA)
+}

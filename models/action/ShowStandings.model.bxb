@@ -1,0 +1,23 @@
+action (ShowStandings) {
+  type (Search)
+  description (show league standings)
+  collect {
+    input (league) {
+      type (League)
+      min (Required) max (One)
+    }
+    input (rank) {
+      type (SearchRank)
+      min (Optional) max (One)
+    }
+  }
+  output (Standings) {
+    sort {
+      each (team) {
+        sorting(team.rank) {
+          by (Asc)
+        }
+      }
+    }
+  }
+}

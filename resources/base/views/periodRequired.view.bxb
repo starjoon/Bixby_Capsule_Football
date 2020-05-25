@@ -1,0 +1,33 @@
+input-view {
+ match : Period (period) {
+  to-input : FindMatches
+ }
+ 
+ message{
+  template("언제 경기를 보여드릴까요?")
+ }
+ 
+ render {
+  selection-of (period) {
+    where-each (one) {
+      compound-card{
+        content{
+          title-card{
+            title-area{
+              halign (Center)
+              slot1{
+                text{
+                  style(Title_XS)
+                  value{
+                    template ("#{value(one)}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  } 
+}

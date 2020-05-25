@@ -1,0 +1,3 @@
+integer (HomeRank) {
+  description (home team rank)
+}

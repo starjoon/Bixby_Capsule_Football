@@ -1,0 +1,4 @@
+structure (MyPreference) {
+  description (User's saved preference)
+  role-of (Guide)
+}

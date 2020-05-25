@@ -1,0 +1,30 @@
+result-view {
+  match {
+    Matches (this) {
+      from-output: GoToMatch
+    }
+  }
+
+  message {
+    template ("경기 결과입니다.")
+  }
+
+  render {
+    layout-macro (match-complete) {
+      param (matchDetails) {
+        expression (this)
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}

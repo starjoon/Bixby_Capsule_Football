@@ -1,0 +1,15 @@
+structure (Highlight) {
+  description (match highlight)
+  property (title) {
+    type (HighlightTitle)
+    min (Required) max (Many)
+  }
+  property (thumbnail) {
+    type (HighlightThumbnail)
+    min (Required) max (Many)
+  }
+  property (url) {
+    type (HighlightURL)
+    min (Required) max (Many)
+  }
+}

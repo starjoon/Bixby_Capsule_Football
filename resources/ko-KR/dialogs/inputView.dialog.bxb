@@ -1,0 +1,25 @@
+template-macro-def (WHICH-PLAYER-MATCH) {
+  content {
+    if ($handsFree == true) {
+      template ("현재 등록된 선수들은 다음과 같습니다. 어떤 선수의 경기를 보여드릴까요?") {
+        speech ("<speak>현재 등록되어 있지 않은 선수네요. 등록된 선수들은 다음과 같습니다: 손흥민, 황의조, 이강인, 황희찬, 권창훈, 이재성, 백승호, 이승우. 어떤 선수의 경기를 보여드릴까요?</speak>")
+      }
+    }
+    else {
+      template ("현재 등록된 선수들은 다음과 같습니다. 어떤 선수의 경기를 보여드릴까요?")
+    }
+  }
+}
+
+template-macro-def (WHICH-PLAYER-STATS) {
+  content {
+    if ($handsFree == true) {
+      template ("현재 등록된 선수들은 다음과 같습니다. 어떤 선수의 성적을 보여드릴까요?") {
+        speech ("<speak>현재 등록되어 있지 않은 선수네요. 등록된 선수들은 다음과 같습니다: 손흥민, 황의조, 이강인, 황희찬, 권창훈, 이재성, 백승호, 이승우. 어떤 선수의 성적을 보여드릴까요?</speak>")
+      }
+    }
+    else {
+      template ("현재 등록된 선수들은 다음과 같습니다. 어떤 선수의 성적을 보여드릴까요?")
+    }
+  }
+}

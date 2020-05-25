@@ -1,0 +1,15 @@
+enum (PlayerTeam) {
+  description (player names for search)
+  symbol (손흥민)
+  symbol (황의조)
+  symbol (이강인)
+  symbol (황희찬)
+  symbol (권창훈)
+  // symbol (정우영)
+  symbol (이재성)
+  symbol (백승호)
+  symbol (이승우)
+  features {
+    transient
+  }
+}

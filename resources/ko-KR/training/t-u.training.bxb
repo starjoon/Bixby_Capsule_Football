@@ -1,0 +1,10 @@
+train (t-u6iyfb0tcmx5abxe09f5mw573) {
+  utterance ("[g:ShowSchedule] 정우영 (경기)[v:SearchFixture] 알고싶어")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEAKYgCygGAA=)
+  last-modified (1587064166242)
+}
+train (t-uh292w22qqe6tr2l1wookxacv) {
+  utterance ("[g:SavePreference] (마이 플레이어)[v:PreferenceAction] (변경)[v:ChangeAction]")
+  plan (Y2BlkM/Kz8/LTM1KrNRLy88vSUrMydHzrQwoSk1LLUrNS05lUMSiIDixLBVJCTYznDMS89JTHZNLMvPzGGSxKEDSr4xXGmoGCwMjAxMDM5BmALIgEAaYwXJAGQA=)
+  last-modified (1572002013850)
+}

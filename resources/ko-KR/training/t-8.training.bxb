@@ -1,0 +1,5 @@
+train (t-8jupc18cumz3236nx1spn56gc) {
+  utterance ("[g:ShowGroups] (챔피언스 리그)[v:Champions:'UEFA 챔피언스 리그'] (순위)[v:SearchRank] 알려줘")
+  plan (Y2BhEM/Kz8/LTM1KrNRLy88vSUrMydELdXVzZJDFIhGckV/uXpRfWlDMIINF2jkjMbcgMz+vGLvm1MSi5IygxLxsBmYGRgYmIMkApEEQAuCiAA==)
+  last-modified (1571686388530)
+}

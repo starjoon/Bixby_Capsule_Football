@@ -1,0 +1,5 @@
+action (ShowGuide) {
+  type (Search)
+  description (show a list of all players available)
+  output (Guide)
+}

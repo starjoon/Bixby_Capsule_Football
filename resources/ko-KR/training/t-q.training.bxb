@@ -1,0 +1,15 @@
+train (t-qksjaytodz060hhstb5hp4y4n) {
+  utterance ("[g:ShowPlayer] (황의조)[v:PlayerTeam:황의조] (성적)[v:SearchStats] 보여줘")
+  plan (Y2BhkMvKz8/LTM1KrNRLy88vSUrMydELyEmsTC0KLkksKWaQxSIfnJFfDlGDVRoiFZKamIvV9ODUxKLkDIjpzAyMDExAkgFIgyAEwEUB)
+  last-modified (1571686450313)
+}
+train (t-qyqqwyqi92r9gbnhiv1ke191p) {
+  utterance ("[g:ShowSchedule] 박지성 (경기)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEAKYgCygGAA=)
+  last-modified (1571686679642)
+}
+train (t-qywgb7tzkm2hd7kvjytilifwx) {
+  utterance ("[g:ShowPlayer] (이강인)[v:PlayerTeam:이강인] (성적)[v:SearchStats] 검색해줘")
+  plan (Y2BhkMvKz8/LTM1KrNRLy88vSUrMydELyEmsTC0KLkksKWaQxSIfnJFfDlGDVRoiFZKamIvV9ODUxKLkDIjpzAyMDExAkgFIgyAEwEUB)
+  last-modified (1571686456473)
+}

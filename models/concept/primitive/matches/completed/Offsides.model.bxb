@@ -1,0 +1,3 @@
+integer (Offsides) {
+  description (number of offsides)
+}

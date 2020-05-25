@@ -1,0 +1,306 @@
+layout {
+  match: Matches (this)
+  mode (Summary)
+
+  content {
+    section {
+      content {
+        compound-card {
+          content {
+            title-area {
+              halign (Start)
+              slot1 {
+                if (exists(this.game)) {
+                  single-line {
+                    text {
+                      value {template ("#{value(this.league)} - #{value(this.game)}차전")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                } else {
+                  single-line {
+                    text {
+                      value {template ("#{value(this.league)}")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+            divider
+            if(!exists(this.matchResult) && !exists(this.matchProgress)){
+              hbox {
+                content {
+                  vbox {
+                    grow (2)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.home_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.home)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (2)
+                    halign (Center)
+                    valign (Middle)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("vs.")}
+                          style (Title_L)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.date)}")}
+                          style (Detail_M)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.time)}")}
+                          style (Detail_M_Soft)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (2)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.away_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.away)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                }                                    
+              }
+            } else-if (!exists(this.matchResult) && exists(this.matchProgress)) {
+              hbox {
+                content {
+                  vbox {
+                    grow (3)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.home_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.home)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (1)
+                    halign (Center)
+                    valign (Top)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("#{value(this.matchProgress.home.score)}")}
+                          style (Title_XL)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (2)
+                    halign (Center)
+                    valign (Bottom)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("-")}
+                          style (Title_XL)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("진행중")}
+                          style (Detail_M)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.matchProgress.time)}'")}
+                          style (Detail_M_Soft)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (1)
+                    halign (Center)
+                    valign (Top)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("#{value(this.matchProgress.away.score)}")}
+                          style (Title_XL)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (3)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.away_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.away)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                }                                    
+              }
+              progress-bar (this.matchProgress.timeProp)
+            } else {
+              hbox {
+                content {
+                  vbox {
+                    grow (3)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.home_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.home)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (1)
+                    halign (Center)
+                    valign (Top)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("#{value(this.matchResult.home.score)}")}
+                          style (Title_XL)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (2)
+                    halign (Center)
+                    valign (Bottom)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("-")}
+                          style (Title_XL)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.date)}")}
+                          style (Legal)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (1)
+                    halign (Center)
+                    valign (Top)
+                    content {
+                      single-line {
+                        text {
+                          value {template ("#{value(this.matchResult.away.score)}")}
+                          style (Title_XL)
+                        }
+                      }
+                    }
+                  }
+                  vbox {
+                    grow (3)
+                    halign (Center)
+                    content {
+                      single-line {
+                        image {
+                          background-color (Transparent)
+                          shape (Square)
+                          style (Title_XL)
+                          url {
+                            template ("#{value(this.away_logo)}")
+                          }
+                        }
+                      }
+                      single-line {
+                        text {
+                          value {template ("#{value(this.away)}")}
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  }
+                }                                    
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

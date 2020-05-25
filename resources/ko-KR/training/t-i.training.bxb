@@ -1,0 +1,10 @@
+train (t-ia7mcw1op5mif0g4lzrn49xp1) {
+  utterance ([g:ShowGuide] 등록된 선수들 보여줘)
+  plan (Y2BikMjKz8/LTM1KrNRLy88vSUrMydFzL81MSWWQwSITnJFfDpFlBEIGKAaSAA==)
+  last-modified (1571678705042)
+}
+train (t-isv9nhwcqe8o4qu35cuqiluop) {
+  utterance ("[g:CheckPreference] (즐겨찾기)[v:PreferenceAction] 보여줘")
+  plan (Y2BmkM/Kz8/LTM1KrNRLy88vSUrMydHzrQwoSk1LLUrNS05lUMKiwDkjNTkbSY0yFjUIacfkksz8PAYmBkYgZgCSjAwgAOUDAA==)
+  last-modified (1571574217636)
+}

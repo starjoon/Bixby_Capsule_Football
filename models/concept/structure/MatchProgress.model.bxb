@@ -1,0 +1,19 @@
+structure (MatchProgress) {
+  description (match progress info)
+  property (time) {
+    type (MatchTime)
+    min (Required) max (One)
+  }
+  property (timeProp) {
+    type (MatchTimeProp)
+    min (Required) max (One)
+  }
+  property (home) {
+    type (HomeResult)
+    min (Required) max (One)
+  }
+  property (away) {
+    type (AwayResult)
+    min (Required) max (One)
+  }
+}

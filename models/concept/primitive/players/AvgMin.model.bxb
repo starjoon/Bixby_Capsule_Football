@@ -1,0 +1,3 @@
+integer (AvgMin) {
+  description (average minutes played)
+}

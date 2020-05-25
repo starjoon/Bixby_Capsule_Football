@@ -1,0 +1,11 @@
+action (CheckPreference) {
+  type (Search)
+  description (check my player preference)
+  collect {
+    input (search) {
+      type (PreferenceAction)
+      min (Required) max (One)
+    }
+  }
+  output (MyPreference)
+}

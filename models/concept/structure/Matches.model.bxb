@@ -1,0 +1,159 @@
+structure (Matches) {
+  description (display upcoming fixtures)
+  property (matchID) {
+    type (MatchID)
+    min (Required) max (One)
+  }
+  property (league) {
+    type (Team)
+    min (Required) max (One)
+  }
+  property (game) {
+    type (Game)
+    min (Optional) max (One)
+  }
+  property (home) {
+    type (Home)
+    min (Required) max (One)
+  }
+  property (home_logo) {
+    type (HomeLogo)
+    min (Required) max (One)
+  }
+  property (home_rank) {
+    type (HomeRank)
+    min (Optional) max (One)
+  }
+  property (home_win) {
+    type (Win)
+    min (Optional) max (One)
+  }
+  property (home_draw) {
+    type (Draw)
+    min (Optional) max (One)
+  }
+  property (home_loss) {
+    type (Loss)
+    min (Optional) max (One)
+  }
+  property (home_pts) {
+    type (HomePoints)
+    min (Optional) max (One)
+  }
+  property (away) {
+    type (Away)
+    min (Required) max (One)
+  }
+  property (away_logo) {
+    type (AwayLogo)
+    min (Required) max (One)
+  }
+  property (away_rank) {
+    type (AwayRank)
+    min (Optional) max (One)
+  }
+  property (away_win) {
+    type (Goals)
+    min (Optional) max (One)
+  }
+  property (away_draw) {
+    type (Assists)
+    min (Optional) max (One)
+  }
+  property (away_loss) {
+    type (Points)
+    min (Optional) max (One)
+  }
+  property (away_pts) {
+    type (AwayPoints)
+    min (Optional) max (One)
+  }
+  property (dateTime) {
+    type (DateTime)
+    min (Required) max (One)
+  }
+  property (date) {
+    type (Date)
+    min (Required) max (One)
+  }
+  property (time) {
+    type (Time)
+    min (Required) max (One)
+  }
+  property (venue) {
+    type (Venue)
+    min (Required) max (One)
+  }
+  property (type) {
+    type (Type)
+    min (Required) max (One)
+  }
+  property (playerName) {
+    type (PlayerName)
+    min (Required) max (Many)
+  }
+  property (playerInfo) {
+    type (PlayerInfo)
+    min (Optional) max (Many)
+  }
+  property (homeLastFive) {
+    type (HomeLastFive)
+    min (Optional) max (Many)
+  }
+  property (awayLastFive) {
+    type (AwayLastFive)
+    min (Optional) max (Many)
+  }
+  property (matchResult) {
+    type (MatchResult)
+    min (Optional) max (Many)
+  }
+  property (matchProgress) {
+    type (MatchProgress)
+    min (Optional) max (Many)
+  }
+  property (highlight) {
+    type (PlayerAge)
+    min (Optional) max (One)
+  }
+  property (recent) {
+    type (RecentGame)
+    min (Optional) max (One)
+  }
+  property (status) {
+    type (RecentGameStatus)
+    min (Optional) max (One)
+  }
+  property (selectedPlayer) {
+    type (Message)
+    min (Optional) max (One)
+  }
+  property (hfLeague) {
+    type (HandsFreeLeague)
+    min (Optional) max (One)
+  }
+  property (hfTeam) {
+    type (HandsFreeTeam)
+    min (Optional) max (One)
+  }
+  property (hfDate) {
+    type (HandsFreeDate)
+    min (Optional) max (One)
+  }
+  property (hfOpp) {
+    type (HandsFreeOpp)
+    min (Optional) max (One)
+  }
+  property (hfWinningScore) {
+    type (HandsFreeWinningScore)
+    min (Optional) max (One)
+  }
+  property (hfLosingScore) {
+    type (HandsFreeLosingScore)
+    min (Optional) max (One)
+  }
+  property (hfResult) {
+    type (HandsFreeResult)
+    min (Optional) max (One)
+  }
+}

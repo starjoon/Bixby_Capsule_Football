@@ -1,0 +1,408 @@
+layout-macro-def(match-details) {
+  params {
+    param (matchDetails) {
+      type (Matches)
+      min (Optional)
+      max (Many)
+    }
+  }
+
+  content {
+    section {  // this macro returns a "section"
+      content {
+        hbox {
+          content {
+            vbox {
+              halign (Start)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.league)}")}
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            }
+            if (exists(matchDetails.game)) {
+              vbox {
+                halign (End)
+                content {
+                  single-line {
+                    text {
+                      value {template ("#{value(matchDetails.game)}차전")}
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        title-area {
+          halign (Center)
+          slot1 {
+            text {
+              value {template ("#{value(matchDetails.date)} #{value(matchDetails.time)}")}
+              style (Title_XS)
+            }
+          }
+          slot2 {
+            single-line {
+              text {
+                value {template ("#{value(matchDetails.venue)}")}
+                style (Detail_M_Soft)
+              }
+            }
+          }
+        }
+        hbox {
+          content {
+            vbox {
+              grow (2)
+              halign (Center)
+              content {
+                single-line {
+                  image {
+                    background-color (Transparent)
+                    shape (Square)
+                    style (Title_XXL)
+                    url {
+                      template ("#{value(matchDetails.home_logo)}")
+                    }
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.home)}")}
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              valign (Middle)
+              content {
+                single-line {
+                  text {
+                    value {template ("vs.")}
+                    style (Title_L)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (2)
+              halign (Center)
+              content {
+                single-line {
+                  image {
+                    background-color (Transparent)
+                    shape (Square)
+                    style (Title_XXL)
+                    url {
+                      template ("#{value(matchDetails.away_logo)}")
+                    }
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.away)}")}
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+          }
+        }
+        divider
+        title-area {
+          halign (Center)
+          slot1 {
+            text {
+              value ("전력 비교")
+            }
+          }
+        }
+        divider
+        hbox {
+          content {
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.home_rank)}위")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.home_win)}승")}
+                    style (Detail_L)
+                  }
+                  spacer
+                  text {
+                    value {template ("#{value(matchDetails.home_draw)}무")}
+                    style (Detail_L)
+                  }
+                  spacer
+                  text {
+                    value {template ("#{value(matchDetails.home_loss)}패")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.home_pts)}점")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  for-each (matchDetails.homeLastFive) {
+                    as (matchResult) {
+                      if ("matchResult == 'W'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Green)
+                        }
+                      }
+                      else-if ("matchResult == 'L'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Red)
+                        }
+                      }
+                      else-if ("matchResult == 'D'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Amber)
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("리그 순위")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("기록")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("승점")}
+                    style (Detail_L_Soft)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("최근 5 경기")}
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            }
+            vbox {
+              grow (1)
+              halign (Center)
+              content {
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.away_rank)}위")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.away_win)}승")}
+                    style (Detail_L)
+                  }
+                  spacer
+                  text {
+                    value {template ("#{value(matchDetails.away_draw)}무")}
+                    style (Detail_L)
+                  }
+                  spacer
+                  text {
+                    value {template ("#{value(matchDetails.away_loss)}패")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  text {
+                    value {template ("#{value(matchDetails.away_pts)}점")}
+                    style (Detail_L)
+                  }
+                }
+                single-line {
+                  for-each (matchDetails.awayLastFive) {
+                    as (matchResult) {
+                      if ("matchResult == 'W'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Green)
+                        }
+                      }
+                      else-if ("matchResult == 'L'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Red)
+                        }
+                      }
+                      else-if ("matchResult == 'D'") {
+                        text {
+                          value {template ("⬤")}
+                          style (Detail_M)
+                          color (Amber)
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }    
+        if (matchDetails.type != '컵') {
+          title-card {
+            on-click {
+              if (matchDetails.league == 'UEFA 챔피언스 리그') {
+                intent {
+                  goal: GoToGroups
+                  value: $expr(matchDetails.league)
+                }
+              } else-if (exists(matchDetails.game)) {
+                intent {
+                  goal: GoToLeg
+                  value: $expr(matchDetails.league)
+                  value: $expr(matchDetails.playerName)
+                  value: $expr(matchDetails.game)
+                }
+              } else {
+                intent {
+                  goal: GoToStandings
+                  value: $expr(matchDetails.league)
+                }
+              }
+            }
+            title-area {
+              halign (Center)
+              slot1 {
+                if (exists(matchDetails.game) && matchDetails.game == '1') {
+                  text {
+                    value {template ("2차전 경기 바로가기")}
+                    style (Detail_L)
+                  }
+                } else-if (exists(matchDetails.game) && matchDetails.game == '2') {
+                  text {
+                    value {template ("1차전 경기 바로가기")}
+                    style (Detail_L)
+                  }
+                } else {
+                  text {
+                    value {template ("#{value(matchDetails.league)} 순위 보기")}
+                    style (Detail_L)
+                  }
+                }  
+              }
+            }
+          }
+        } else {
+          divider
+        }
+        single-line {
+          text {
+            value {template ("코리안리거")}
+            style (Detail_L_Soft)
+          }
+        }
+        for-each (matchDetails.playerInfo) {
+          as (player) {
+            thumbnail-card {
+              on-click {
+                intent {
+                  goal: GoToPlayer
+                  value: $expr(player.playerName)
+                }
+              }
+              title-area {
+                halign (Center)
+                slot1 {
+                  text {
+                    style (Title_S)
+                    value {template ("#{value(player.playerName)}")}
+                  }
+                }
+                slot2 {
+                  single-line {
+                    text {
+                      style (Detail_M_Soft)
+                      value {template ("2019-20 시즌")}
+                    }
+                  }
+                }
+                slot3 {
+                  single-line {
+                    text {
+                      style (Title_L)
+                      value {template ("#{value(player.matchesPlayed)}")}
+                    }
+                    spacer
+                    text {
+                      style (Detail_M)
+                      value {template ("경기")}
+                    }
+                    spacer
+                    text {
+                      style (Title_L)
+                      value {template ("#{value(player.goals)}")}
+                    }
+                    spacer
+                    text {
+                      style (Detail_M)
+                      value {template ("득점")}
+                    }
+                    spacer
+                    text {
+                      style (Title_L)
+                      value {template ("#{value(player.assists)}")}
+                    }
+                    spacer
+                    text {
+                      style (Detail_M)
+                      value {template ("도움")}
+                    }
+                  }
+                }
+              }
+              image-url {
+                template ("#{value(player.playerPic)}")
+              }
+              image-position (Start)
+              image-object-fit (Contain)
+            }
+          }
+        }      
+      }
+    }
+  }
+}

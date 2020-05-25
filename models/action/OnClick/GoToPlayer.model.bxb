@@ -1,0 +1,15 @@
+action (GoToPlayer) {
+  type (Constructor)
+  description (go to player information)
+  collect {
+    input (playerTeam) {
+      type (PlayerName)
+      min (Required) max (One)
+    }
+    input (stats) {
+      type (SearchStats)
+      min (Optional) max (One)
+    }
+  }
+  output (PlayerStats)
+}

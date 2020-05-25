@@ -1,0 +1,10 @@
+train (t-eca4m0joqgjqn8al1tgtjknxl) {
+  utterance ("[g:ShowStandings] (분데스리가)[v:League:분데스리가] (순위)[v:SearchRank] 알려줘")
+  plan (Y2BhkMnKz8/LTM1KrNRLy88vSUrMydELLknMS8nMSy9mUMAmm5FfjlAhiUWFT2piemkqgyw2zamJRckZQYl52QzMDIwMTECSAUiDIATARQE=)
+  last-modified (1571553894884)
+}
+train (t-ekc09nhgmicgq0baxnb9frf0x) {
+  utterance ("[g:ShowGroups] (챔피언스 리그)[v:Champions:'UEFA 챔피언스 리그'] (순위)[v:SearchRank] 궁금해")
+  plan (Y2BhEM/Kz8/LTM1KrNRLy88vSUrMydELdXVzZJDFIhGckV/uXpRfWlDMIINF2jkjMbcgMz+vGLvm1MSi5IygxLxsBmYGRgYmIMkApEEQAuCiAA==)
+  last-modified (1571686370212)
+}

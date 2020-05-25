@@ -1,0 +1,3 @@
+integer (Goals) {
+  description (total goals this season)
+}

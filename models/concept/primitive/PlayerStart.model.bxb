@@ -1,0 +1,3 @@
+boolean (PlayerStart) {
+  description (did the player start?)
+}

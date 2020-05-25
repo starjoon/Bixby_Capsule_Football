@@ -1,0 +1,27 @@
+action (FindMatchesPOST) {
+  type (Search)
+  description (show this week's football fixtures)
+  collect {
+    input (preference) {
+      type (Preference)
+      min (Required) max (Many)
+    }
+    input (period) {
+      type (Period)
+      min (Required) max (One)
+    }
+    input (fixture) {
+      type (SearchFixture)
+      min (Required) max (One)
+    }
+  }
+  output (Matches) {
+    sort {
+      each (match) {
+        sorting (match.highlight) {
+          by (Desc)
+        }
+      }
+    }
+  }
+}

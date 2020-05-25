@@ -1,0 +1,5 @@
+train (t-z53x7q2mvkubgiuwlaa4si6kb) {
+  utterance ("[g:ShowSchedule] (황의조)[v:PlayerTeam:황의조] (경기 일정)[v:SearchFixture] 보여줘")
+  plan (Y2BhkMrKz8/LTM1KrNRLy88vSUrMydHzTSxJzkgtZpDHIheckV8eDJRNKc1JZZDFoiAgJ7EytSgkNTGXQQGb/tTEouQMt8yKktKiVAZmBkYGJiDJAKRBEALgogA=)
+  last-modified (1571572236384)
+}

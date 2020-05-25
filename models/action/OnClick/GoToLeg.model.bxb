@@ -1,0 +1,19 @@
+action (GoToLeg) {
+  type(Constructor)
+  description (Go to match leg)
+  collect {
+    input (league) {
+      type (Team)
+      min (Required) max (One)
+    }
+    input (playerName) {
+      type (PlayerName)
+      min (Required) max (One)
+    }
+    input (game) {
+      type (Game)
+      min (Required) max (One)
+    }
+  }
+  output (Matches)
+}

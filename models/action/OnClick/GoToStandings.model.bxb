@@ -1,0 +1,23 @@
+action (GoToStandings) {
+  type (Constructor)
+  description (show league standings)
+  collect {
+    input (league) {
+      type (Team)
+      min (Required) max (One)
+    }
+    input (rank) {
+      type (SearchRank)
+      min (Optional) max (One)
+    }
+  }
+  output (Standings) {
+    sort {
+      each (team) {
+        sorting(team.rank) {
+          by (Asc)
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+train (t-yxzwfxdgd5c7rs3i7dzgg7ddf) {
+  utterance ("[g:RegisterPreference] (즐겨찾기)[v:PreferenceAction] (등록할래)[v:RegisterAction]")
+  plan (Y2BlkM/Kz8/LTM1KrNRLy88vSUrMydHzrQwoSk1LLUrNS05lUMWiICg1PbO4JLUISZksFmVI0sp4pR2TSzLz8xgU8VgFVcLCwMjAxMAMpBmALAiEAWYgGywDAA==)
+  last-modified (1571576309288)
+}

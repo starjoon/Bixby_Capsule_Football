@@ -1,0 +1,21 @@
+capsule {
+  id (jooniejay.football)
+  version (1.4.0)
+  format (3)
+  targets {
+    target (bixby-mobile-ko-KR)
+    // target (bixby-speaker-ko-KR)
+  }
+  runtime-version (6)
+  store-sections {
+    section (Sports)
+  }
+  store-countries {
+    only {
+      allow (KR)
+    }
+  }
+  permissions {
+    bixby-user-id-access
+  }
+}

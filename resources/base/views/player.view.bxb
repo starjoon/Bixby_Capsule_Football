@@ -1,0 +1,697 @@
+result-view {
+  match {
+    PlayerStats (this)
+  }
+  
+   message {
+    template-macro (PLAYER-STATS) {
+      param (this) {
+        expression (this)
+      }
+    }
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          image-card {
+            title-area {
+              halign (Center)
+              slot1 {
+                text {
+                  value ("")
+                }
+              }
+            }
+            image-url ("#{value(this.profPic)}")
+            aspect-ratio (4:3)
+            image-background-color (Transparent)
+            image-object-fit (Contain)
+          }
+          spacer
+          hbox {
+            content {
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.name)}")
+                    style (Title_XL)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                halign (Center)
+                valign (Middle)
+                content {
+                  text {
+                    value ("##{value(this.number)}")
+                    style (Title_XL)
+                  }
+                }
+              }
+            }
+          }
+          spacer
+          single-line {
+            text {
+              value ("2019/20 시즌 합계")
+              style (Detail_L_Soft)
+            }
+          }
+          hbox {
+            content {
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("경기")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("선발")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("교체")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                valign (Middle)
+                content {
+                  text {
+                    value ("평균 출전")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("득점")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("도움")
+                    style (Detail_L)
+                  }
+                }
+              }
+            }
+          }
+          divider
+          hbox {
+            content {
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.matchesPlayed)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.start)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.sub)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (2)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.avg)}분")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.goal)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+              vbox {
+                grow (1)
+                valign (Middle)
+                content {
+                  text {
+                    value ("#{value(this.stats.total.assist)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+            }
+          }
+          spacer
+          if (exists(this.stats.fixture.UEFA)) {
+            single-line {
+              text {
+                value ("2019/20 #{value(this.stats.fixture.UEFA.type)}")
+                style (Detail_L_Soft)
+              }
+            }
+            hbox {
+              content {
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("날짜")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("상대")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("출전")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("시간")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("득점")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("도움")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              }
+            }
+            divider
+            for-each (this.stats.fixture.UEFA.matches) {
+              as (match) {
+                compound-card {
+                  on-click {
+                    intent {
+                      goal: GoToMatch
+                      value: $expr(match.matchID)
+                    }
+                  }
+                  content {
+                    hbox {
+                      content {
+                        vbox {
+                          grow (3)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.date)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              image {
+                                url ("#{value(match.oppPic)}")
+                              }
+                            }                
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            if (match.start == true) {
+                              text {
+                                value ("선발")
+                                style (Detail_L)
+                              }
+                            } else {
+                              text {
+                                value ("교체")
+                                style (Detail_L)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (3)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.min)}분")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.goal)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.assist)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            spacer
+          }
+          if (exists(this.stats.fixture.league)) {
+            single-line {
+              text {
+                value ("2019/20 #{value(this.stats.fixture.league.type)}")
+                style (Detail_L_Soft)
+              }
+            }
+            hbox {
+              content {
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("날짜")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("상대")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("출전")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("시간")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("득점")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("도움")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              }
+            }
+            divider
+            for-each (this.stats.fixture.league.matches) {
+              as (match) {
+                compound-card {
+                  on-click {
+                    intent {
+                      goal: GoToMatch
+                      value: $expr(match.matchID)
+                    }
+                  }
+                  content {
+                    hbox {
+                      content {
+                        vbox {
+                          grow (3)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.date)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              image {
+                                url ("#{value(match.oppPic)}")
+                              }
+                            }                
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            if (match.start == true) {
+                              text {
+                                value ("선발")
+                                style (Detail_L)
+                              }
+                            } else {
+                              text {
+                                value ("교체")
+                                style (Detail_L)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (3)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.min)}분")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.goal)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.assist)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            spacer
+          }
+          if (exists(this.stats.fixture.cup)) {
+            single-line {
+              text {
+                value ("2019/20 #{value(this.stats.fixture.cup.type)}")
+                style (Detail_L_Soft)
+              }
+            }
+            hbox {
+              content {
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("날짜")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("상대")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("출전")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (3)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("시간")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("득점")
+                      style (Detail_L)
+                    }
+                  }
+                }
+                vbox {
+                  grow (2)
+                  valign (Middle)
+                  content {
+                    text {
+                      value ("도움")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              }
+            }
+            divider
+            for-each (this.stats.fixture.cup.matches) {
+              as (match) {
+                compound-card {
+                  on-click {
+                    intent {
+                      goal: GoToMatch
+                      value: $expr(match.matchID)
+                    }
+                  }
+                  content {
+                    hbox {
+                      content {
+                        vbox {
+                          grow (3)
+                          halign (Center)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.date)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            single-line {
+                              image {
+                                url ("#{value(match.oppPic)}")
+                              }
+                            }                
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            if (match.start == true) {
+                              text {
+                                value ("선발")
+                                style (Detail_L)
+                              }
+                            } else {
+                              text {
+                                value ("교체")
+                                style (Detail_L)
+                              }
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (3)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.min)}분")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.goal)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                        vbox {
+                          grow (2)
+                          valign (Middle)
+                          content {
+                            text {
+                              value ("#{value(match.assist)}")
+                              style (Detail_L)
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            spacer
+          }
+        }
+      }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template ("#{value(this.name)} 경기 보여줘")
+    }
+    conversation-driver {
+      template-macro (THIS)
+    }
+    conversation-driver {
+      template-macro (LAST)
+    }
+    conversation-driver {
+      template-macro (NEXT)
+    }
+  }
+}
